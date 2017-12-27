@@ -13,15 +13,16 @@ if(isset($_GET['id'])){
 	die("ERROR 404!");
 }
 if(isset($_POST['botaoatualizar'])){
-	if($_FILES['imagem']['type'] == "image/jpg" || $_FILES['imagem']['type'] == "image/png"){
+	if($_FILES['imagem']['type'] == "image/jpeg" || $_FILES['imagem']['type'] == "image/png"){
 		$foto = $_FILES['imagem'];
 		$true = 1;
+		$old = 0;
 	}else{
 		$foto = NULL;
 		$old = $fetch['foto'];
 		$true = 0;
 	}
-	if($fodase = $usuarios->update($_GET['id'], $_POST['nomecompleto'], $_POST['cpf'], $_POST['rg'], $_POST['autorizado'], $_POST['dataehora'],
+	if($atualizar = $usuarios->update($_GET['id'], $_POST['nomecompleto'], $_POST['cpf'], $_POST['rg'], $_POST['autorizado'], $_POST['dataehora'],
 	 $_POST['destino'], $_POST['telefone'], $_POST['cracha'], $_POST['empresa'], $_POST['observacao'], $foto, $true, $old)){
 ?>
 <div class="alert alert-success" role="alert"><?php echo "Sucesso!"; ?></div>

@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 if(isset($_POST['botaobusc'])){
-	$fetch = $usuarios->buscar($_POST['buscar']);
+	$fetch = $usuarios->buscar($_POST['buscar'], $_POST['cpf']);
 }
 ?>
 <div class="row">
@@ -11,7 +11,8 @@ if(isset($_POST['botaobusc'])){
 	<center>
 	<h1>Buscar:</h1>
 	<form class="form-inline" action="consultar_cad.php?show" method="POST">
-		<input type="text" name="buscar" class="form-control" size="70">
+		<input type="text" name="buscar" class="form-control" placeholder="Digite o nome ou CPF" size="70">
+		<input type="radio" name="cpf" value="1"> Buscar por CPF
 		<input type="submit" name="botaobusc" class="form-control btn btn-success" value="Procurar">
 	</form>
 	</center>

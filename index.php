@@ -3,10 +3,14 @@ include("header_usuario.php");
 if(isset($_POST['entrar'])){
   $usuarios = new usuarios;
 
-  if($usuarios->login($_POST['nome'], $_POST['senha'])){
-    header("location:dashboard.php");
+  if($erro = $usuarios->login($_POST['nome'], $_POST['senha'])){
+    print_r($erro);
+        echo $_POST['nome'];
+    echo $_POST['senha'];
   }else{
-    echo "Error!";
+    print_r($erro);
+    echo $_POST['nome'];
+    echo $_POST['senha'];
   }
 }
 ?>

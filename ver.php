@@ -17,15 +17,21 @@ if($_GET['id']){
 <div class="col-xs-8">
 	<div class="col-xs-7">
 	Nome Completo: <strong><?php echo $fetch['nome']; ?></strong><br><br>
+	<div id="noprint">
 	CPF: <strong><?php echo $fetch['cpf']; ?></strong><br><br>
 	RG: <strong><?php echo $fetch['rg']; ?></strong><br><br>
 	Autorizado por: <strong><?php echo $fetch['autorizado']; ?></strong><br><br>
+	</div>
 	Data & Hora: <strong><?php echo $fetch['data']; ?></strong><br><br>
 	Destino: <strong><?php echo $fetch['destino']; ?></strong><br><br>
+	<div id="noprint">
 	Telefone de Contato: <strong><?php echo $fetch['telefone']; ?></strong><br><br>
 	Número do Crachá: <strong><?php echo $fetch['cracha']; ?></strong><br><br>
+	</div>
 	Empresa: <strong><?php echo $fetch['empresa']; ?></strong><br><br>
+	<div id="noprint">
 	Observações: <strong><?php echo $fetch['observacao']; ?></strong><br>
+	</div>
 	</div>
 	<div class="col-xs-4">
 	<img width="250" height="200" src="<?php echo $fetch['foto']; ?>">
@@ -39,7 +45,10 @@ if($_GET['id']){
 	<div class="col-xs-10">
 	</div>
 	<div class="col-xs-2">
+		<div id="noprint">
+		<a id="print" href="#" onclick="window.print(); return false;">Imprimir</a> |
 		<a href="editar.php?id=<?php echo $_GET['id']; ?>">Editar</a>
+	</div>
 	</div>
 </div>
 </div>

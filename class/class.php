@@ -4,7 +4,7 @@ class usuarios {
 	public $db;
 
 	public function __construct(){
-		$this->db = new mysqli("localhost", "root", "", "indoor");
+		$this->db = new mysqli("localhost", "root", "admin", "indoor");
 	}
 
 	public function verificar($id){
@@ -74,11 +74,10 @@ class usuarios {
 		$query = $this->db->query("SELECT id FROM usuarios WHERE usuario = '{$nomeHtml}' AND senha = '{$senhaMd5}'");
 		$fetch = $query->fetch_array(MYSQLI_ASSOC);
 
-		if($fetch){
+		if($fetch['id']){
 			setcookie("logado", 1, time()+3600000);
 			setcookie("id", $fetch['id'], time()+3600000);
 			return 1;
-
 		}else{
 			return 0;
 		}
@@ -139,12 +138,22 @@ class usuarios {
 			return 0;
 		}
 	}
-	public function buscar($nome){
+	public function buscar($nome, $cpf){
 		$usuario = '%'.htmlentities($nome, ENT_QUOTES).'%';
-		if($query = $this->db->query("SELECT id, nome, cpf, rg, foto FROM vsitantes WHERE nome LIKE '{$usuario}'")){
-			return $query;
-		}else{
-			return 0;
+		if ($cpf == 1) {
+			if ($query = $this->db->query("SELECT id, nome, cpf, rg, foto FROM vsitantes WHERE cpf LIKE '{$usuario}'")) {
+					return $query;
+			} else {
+					return 0;
+				}			
+		} else {
+
+			if ($query = $this->db->query("SELECT id, nome, cpf, rg, foto FROM vsitantes WHERE nome LIKE '{$usuario}'")) {
+					return $query;
+			} else {
+					return 0;
+				}			
 		}
+	
 	}
 }

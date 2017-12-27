@@ -27,6 +27,10 @@ if($_COOKIE['logado']){
     <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
 	<script src="js/jquery.datetimepicker.full.min.js"></script>
     <style type="text/css">
+ 		@media print { 
+            #noprint { display:none; } 
+
+        }
 
 		#image-preview {
 		  width: 250px;
