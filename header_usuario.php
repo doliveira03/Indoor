@@ -18,6 +18,7 @@ if(isset($_COOKIE['logado'])){
 	<script type="text/javascript" src="js/jquery.uploadPreview.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
+	  <link rel="stylesheet" type="text/css" href="css/estiloIndoor.css"/>
 	<script src="js/jquery.datetimepicker.full.min.js"></script>
     <style type="text/css">
 
