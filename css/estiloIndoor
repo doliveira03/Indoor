@@ -1,0 +1,52 @@
+/* Index */
+
+.form-login{ 
+		max-width: 350px;
+		margin-left: 50px;
+		margin-top: 55px;
+		padding: 15px;
+		border-radius: 15px;
+	    background: -webkit-gradient(linear, left top, left bottom, from(#C0C0C0), to(#FFF)) repeat-X;
+	    background: -moz-linear-gradient(top , #D3D3D3, #FFF);
+	    background:-ms-linear-gradient(top,  #DCDCDC, #FFF);			
+}
+ 
+#fundo img {
+    width: 100%; 
+    position: absolute;
+}
+
+i.glyphicon-user{font-size:30px;
+		        color:#ffffff;
+		   
+		        background:	#2c3e50;
+		        padding: 15px;
+		        border-radius: 50px;
+}
+
+span.glyphicon-lock{
+	color: 	#2c3e50;
+}
+
+span.glyphicon-user{
+	color:#2c3e50;
+}
+
+.btn-primary{
+    color:#fff;
+    background: #2c3e50;
+}
+    
+.navbar{
+     margin-bottom: 0px;
+}
+    
+.navbar {
+    border-radius: 0;
+}
+    
+.navbar-inverse .navbar-text {
+    color: #fff;
+}
+    
+/* Fim index */
